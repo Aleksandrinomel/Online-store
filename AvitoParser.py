@@ -1,7 +1,7 @@
-import requests
 import re
-from bs4 import BeautifulSoup
 
+from bs4 import BeautifulSoup
+import requests
 
 avito_html = requests.get('https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty')
 text = BeautifulSoup(avito_html.text, "html.parser")
