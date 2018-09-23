@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 
 avito_html = requests.get('https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty')
 text = BeautifulSoup(avito_html.text, "html.parser")
-
 pages = text.select('.pagination-page')
 for page in pages:
     if page.getText() == 'Последняя':
