@@ -5,13 +5,15 @@ import requests
 avito_html = requests.get('https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty')
 text = BeautifulSoup(avito_html.text, "html.parser")
 pages = text.select('.pagination-page')
+
+# Определяет кол-во страниц, на которых расположены нужные объявления
 for page in pages:
     if page.getText() == 'Последняя':
         m = re.search('(p=)\w+', page.get('href'))
         total_pages = int(m.group(0)[2:])
 
+# Ходит по страницам, ищет ссылки на товар и записывает их в список links        
 links = []
-l = 0
 for number_page in range(1, total_pages + 1):
     link = 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty?p=' + str(number_page)
     avito_html = requests.get(link)
