@@ -20,4 +20,3 @@ for number_page in range(1, total_pages + 1):
     for i in items:
         href = 'https://www.avito.ru' + i.get('href')
         links.append(href)
-        l += 1
