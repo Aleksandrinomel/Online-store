@@ -2,14 +2,14 @@ import re
 import requests
 from datetime import datetime, timedelta
 import time
-
+from django.db import models
 from bs4 import BeautifulSoup
 
 
 def parser():
     proxies = {
 
-        'https': 'https://90.173.50.18:8080'
+        'https': 'https://194.135.75.74:41258'
     }
 
     avito_html = requests.get('https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty',
@@ -27,7 +27,12 @@ def parser():
     links = []
     for number_page in range(1, total_pages + 1):
         link = 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty?p=' + str(number_page)
-        avito_html = requests.get(link, proxies=proxies)
+        #Обработка исключений без прерывания цикла
+        try:
+            avito_html = requests.get(link, proxies=proxies)
+        except Exception as e:
+            print(e)
+            continue    
         text = BeautifulSoup(avito_html.text, "html.parser")
         items = text.select('.item-description-title-link')
         for i in items:
@@ -79,6 +84,23 @@ def parser():
             info_dict['photo_link'] = image_links
             data_dicts.append(info_dict)
             print(info_dict)
+#Записываем данные из словарей в бд, через модель django
+            good = Goods(avito_ad_number=info_dict['id'])
+            good.save()
+            good = Goods(avito_date_publication=info_dict['avito_date_publication'])
+            good.save()
+            good = Goods(avito_time_publication=info_dict['avito_time_publication'])
+            good.save()
+            good = Goods(price=info_dict['price'])
+            good.save()
+            good = Goods(adress=info_dict['adress'])
+            good.save()
+            good = Goods(ad_text=info_dict['ad_text'])
+            good.save()
+            good = Goods(name=info_dict['name'])
+            good.save()
+            good = Goods(photo_link=info_dict['photo_link'])
+            good.save()
             time.sleep(0.5)
         except:
             continue
