@@ -2,8 +2,13 @@ import re
 import requests
 from datetime import datetime, timedelta
 import time
+import os
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+import django
+django.setup()
 from django.db import models
 from bs4 import BeautifulSoup
+from goods.models import Goods
 
 
 def parser():
