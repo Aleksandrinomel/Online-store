@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 import requests
 from datetime import datetime, timedelta
@@ -90,21 +91,10 @@ def parser():
             data_dicts.append(info_dict)
             print(info_dict)
 #Записываем данные из словарей в бд, через модель django
-            good = Goods(avito_ad_number=info_dict['id'])
-            good.save()
-            good = Goods(avito_date_publication=info_dict['avito_date_publication'])
-            good.save()
-            good = Goods(avito_time_publication=info_dict['avito_time_publication'])
-            good.save()
-            good = Goods(price=info_dict['price'])
-            good.save()
-            good = Goods(adress=info_dict['adress'])
-            good.save()
-            good = Goods(ad_text=info_dict['ad_text'])
-            good.save()
-            good = Goods(name=info_dict['name'])
-            good.save()
-            good = Goods(photo_link=info_dict['photo_link'])
+            good = Goods(avito_ad_number=info_dict['id'], avito_date_publication=info_dict['avito_date_publication'], 
+                          avito_time_publication=info_dict['avito_time_publication'], price=info_dict['price'],
+                          adress=info_dict['adress'], ad_text=info_dict['ad_text'], name=info_dict['name'],
+                          photo_link=info_dict['photo_link'])
             good.save()
             time.sleep(0.5)
         except:
