@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+*.pyc
 .idea
 venv
 1.py
-=======
-.idea
-venv
->>>>>>> 073376763db9b397b3a2b2786b58d0ebbcef7b51
+
