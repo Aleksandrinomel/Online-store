@@ -15,14 +15,14 @@ from goods.models import Goods
 def parser():
     proxies = {
 
-        'https': 'https://194.135.75.74:41258'
+        'https': 'https://12.2.202.242:8080'
     }
 
     avito_html = requests.get('https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty',
                               proxies=proxies)
     text = BeautifulSoup(avito_html.text, "html.parser")
     pages = text.select('.pagination-page')
-
+    #print(text)
     # Определяет кол-во страниц, на которых расположены нужные объявления
     for page in pages:
         if page.getText() == 'Последняя':
@@ -31,6 +31,7 @@ def parser():
 
     # Ходит по страницам, ищет ссылки на товар и записывает их в список links
     links = []
+    y = 0 
     for number_page in range(1, total_pages + 1):
         link = 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty?p=' + str(number_page)
         #Обработка исключений без прерывания цикла
@@ -45,14 +46,18 @@ def parser():
             href = 'https://www.avito.ru' + i.get('href')
             links.append(href)
             print(href)
+        y += 1
+        if y == 10:
+            break
         time.sleep(0.5)
     print(links)
 
     # Ходит по ссылкам на товар и заполняет список словарей
-    data_dicts = []
+#    data_dicts = []
     months = {'марта': '03', 'апреля': '04', 'мая': '05', 'июня': '06', 'июля': '07', 'августа': '08',
               'сентября': '09', 'октября': '10', 'ноября': '11', 'декабря': '12', 'января': '01', 'февраля': '02'}
 
+    x = 0
     for item_link in links:
         try:
             item_html = requests.get(item_link, proxies=proxies)
@@ -88,18 +93,22 @@ def parser():
             for image_tag in image_tags:
                 image_links += image_tag['data-url'] + ','
             info_dict['photo_link'] = image_links
-            data_dicts.append(info_dict)
-            print(info_dict)
-#Записываем данные из словарей в бд, через модель django
-            good = Goods(avito_ad_number=info_dict['id'], avito_date_publication=info_dict['avito_date_publication'], 
-                          avito_time_publication=info_dict['avito_time_publication'], price=info_dict['price'],
-                          adress=info_dict['adress'], ad_text=info_dict['ad_text'], name=info_dict['name'],
-                          photo_link=info_dict['photo_link'])
+#            data_dicts.append(info_dict)
+#            print(info_dict)
+            #Записываем данные из словарей в бд, через модель django
+            good = Goods(name=info_dict['name'], avito_ad_number=info_dict['id'],
+                         publication_date=info_dict['avito_date_publication'],
+                         publication_time=info_dict['avito_time_publication'], text=info_dict['ad_text'],
+                         photo_link=info_dict['photo_link'], adress=info_dict['adress'], price=info_dict['price'])
             good.save()
+            #print(Goods.name)
+            x += 1
+            if x == 100:
+                break
             time.sleep(0.5)
-        except:
+        except BaseException as er:
+            print(er)
             continue
-    return data_dicts
 
 
 if __name__ == "__main__":
