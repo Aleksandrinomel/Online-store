@@ -11,3 +11,4 @@ class Goods(models.Model):
 	adress = models.TextField(null=True)
 	price = models.TextField(null=True)
 	text = models.TextField(null=True)
+	category = models.TextField(null=True)
