@@ -15,7 +15,7 @@ from goods.models import Goods
 def parser():
     proxies = {
 
-        'https': 'https://12.2.202.242:8080'
+        'https': 'https://118.174.211.219:3128'
     }
 
     category_list =['https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/cd_dvd_i_blu-ray_privody',
@@ -31,16 +31,16 @@ def parser():
                      'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/sistemy_ohlazhdeniya']
 
     category_dict = {'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/cd_dvd_i_blu-ray_privody':
-                      'CD, DVD и Blu-ray приводы', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/bloki_pitaniya':
-                      'Блоки питания', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty':
-                      'Видеокарты', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zhestkie_diski':
-                      'Жёсткие диски', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zvukovye_karty':
-                      'Звуковые карты', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/kontrollery':
-                      'Контролеры', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/korpusy': 'Корпусы',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/materinskie_platy': 'Материнские платы',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/operativnaya_pamyat': 'Оперативная память',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/protsessory': 'Процессоры',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/sistemy_ohlazhdeniya': 'Системы охлаждения'}
+                      'cd_dvd_i_blu-ray_privody', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/bloki_pitaniya':
+                      'bloki_pitaniya', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty':
+                      'videokarty', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zhestkie_diski':
+                      'zhestkie_diski', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zvukovye_karty':
+                      'zvukovye_karty', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/kontrollery':
+                      'kontrollery', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/korpusy': 'korpusy',
+                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/materinskie_platy': 'materinskie_platy',
+                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/operativnaya_pamyat': 'operativnaya_pamyat',
+                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/protsessory': 'protsessory',
+                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/sistemy_ohlazhdeniya': 'sistemy_ohlazhdeniya'}
 
     for category in category_list:
 
@@ -128,7 +128,7 @@ def parser():
                 good.save()
 
                 x += 1
-                if x == 1:
+                if x == 2:
                     break
                 time.sleep(0.5)
             except BaseException as er:
