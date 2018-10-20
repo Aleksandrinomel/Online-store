@@ -9,6 +9,6 @@ def product_category(request, product_category):
 
 
 def item(request, product_category, good_id):
-    goods = Goods.objects.filter(category=product_category, avito_ad_number=good_id)
+    good = Goods.objects.filter(category=product_category, avito_ad_number=good_id)
     return render(request, 'goods/item.html', {'goods': goods})
 
