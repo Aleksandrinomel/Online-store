@@ -12,3 +12,4 @@ class Goods(models.Model):
 	price = models.TextField(null=True)
 	text = models.TextField(null=True)
 	category = models.TextField(null=True)
+	deletion_date = models.DateField(null=True)

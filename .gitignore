@@ -2,4 +2,5 @@
 .idea
 venv
 1.py
-/db/*.sqlite3
+*.sqlite3
+Online-store

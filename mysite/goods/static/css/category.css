@@ -1,0 +1,11 @@
+.item {
+    width: 218px;
+    height: 400px;
+    margin-left: 10px;
+    padding: 10px;
+    float: left;
+}
+.img-container {
+    width: 208px;
+    height: 156px;
+}

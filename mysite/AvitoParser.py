@@ -15,38 +15,44 @@ from goods.models import Goods
 def parser():
     proxies = {
 
-        'https': 'https://118.174.211.219:3128'
+        'https': 'https://51.140.202.119:8080'
     }
 
-    category_list =['https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/cd_dvd_i_blu-ray_privody',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/bloki_pitaniya',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zhestkie_diski',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zvukovye_karty',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/kontrollery',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/korpusy',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/materinskie_platy',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/operativnaya_pamyat',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/protsessory',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/sistemy_ohlazhdeniya']
+    category_list =['https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty']
 
-    category_dict = {'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/cd_dvd_i_blu-ray_privody':
-                      'cd_dvd_i_blu-ray_privody', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/bloki_pitaniya':
-                      'bloki_pitaniya', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty':
-                      'videokarty', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zhestkie_diski':
-                      'zhestkie_diski', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zvukovye_karty':
-                      'zvukovye_karty', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/kontrollery':
-                      'kontrollery', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/korpusy': 'korpusy',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/materinskie_platy': 'materinskie_platy',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/operativnaya_pamyat': 'operativnaya_pamyat',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/protsessory': 'protsessory',
-                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/sistemy_ohlazhdeniya': 'sistemy_ohlazhdeniya'}
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/cd_dvd_i_blu-ray_privody',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/bloki_pitaniya',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zhestkie_diski',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zvukovye_karty',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/kontrollery',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/korpusy',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/materinskie_platy',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/operativnaya_pamyat',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/protsessory',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/sistemy_ohlazhdeniya']
+
+    category_dict = {'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty':
+                      'videokarty'}
+
+#                      'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/cd_dvd_i_blu-ray_privody':
+#                      'cd_dvd_i_blu-ray_privody', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/bloki_pitaniya':
+#                      'bloki_pitaniya', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty':
+#                      'videokarty', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zhestkie_diski':
+#                      'zhestkie_diski', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/zvukovye_karty':
+#                      'zvukovye_karty', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/kontrollery':
+#                      'kontrollery', 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/korpusy': 'korpusy',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/materinskie_platy': 'materinskie_platy',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/operativnaya_pamyat': 'operativnaya_pamyat',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/protsessory': 'protsessory',
+#                     'https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/sistemy_ohlazhdeniya': 'sistemy_ohlazhdeniya'}
 
     for category in category_list:
 
         avito_html = requests.get(category, proxies=proxies)
         text = BeautifulSoup(avito_html.text, "html.parser")
         pages = text.select('.pagination-page')
+        print(text)
     
         # Определяет кол-во страниц, на которых расположены нужные объявления
         for page in pages:
@@ -55,7 +61,7 @@ def parser():
                 total_pages = int(m.group(0)[2:])
 
         # Ходит по страницам, ищет ссылки на товар и записывает их в список links
-        links = []
+        links = set()
         y = 0 
         for number_page in range(1, total_pages + 1):
             link = category + '?p=' + str(number_page)
@@ -69,12 +75,12 @@ def parser():
             items = text.select('.item-description-title-link')
             for i in items:
                 href = 'https://www.avito.ru' + i.get('href')
-                links.append(href)
+                links.add(href)
                 print(href)
-            y += 1
-            if y == 1:
-                break
-            time.sleep(0.5)
+#            y += 1
+#            if y == 1:
+#               break
+            time.sleep(1)
         print(links)
 
         # Ходит по ссылкам на товар и заполняет список словарей
@@ -118,7 +124,8 @@ def parser():
                 for image_tag in image_tags:
                     image_links += image_tag['data-url'] + ','
                 info_dict['photo_link'] = image_links
-#                
+                print(info_dict)
+
                 #Записываем данные из словарей в бд, через модель django
                 good = Goods(name=info_dict['name'], avito_ad_number=info_dict['id'],
                              publication_date=info_dict['avito_date_publication'],
@@ -127,10 +134,10 @@ def parser():
                              category=category_dict[category])
                 good.save()
 
-                x += 1
-                if x == 2:
-                    break
-                time.sleep(0.5)
+#                x += 1
+#                if x == 2:
+#                   break
+                time.sleep(1)
             except BaseException as er:
                 print(er)
                 continue

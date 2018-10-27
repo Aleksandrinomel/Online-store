@@ -9,6 +9,8 @@ def product_category(request, product_category):
 
 
 def item(request, product_category, good_id):
-    goods = Goods.objects.filter(category=product_category, avito_ad_number=good_id)
-    return render(request, 'goods/item.html', {'goods': goods})
+    good = Goods.objects.get(category=product_category, avito_ad_number=good_id)
+    photo_links = Goods.objects.get(avito_ad_number=good_id).photo_link
+    photo_links = photo_links.split(',')
+    return render(request, 'goods/item.html', {'good': good, 'photo_links': photo_links})
 

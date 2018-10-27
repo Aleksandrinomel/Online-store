@@ -20,7 +20,7 @@ from goods import views
 
 urlpatterns = [
     re_path(r'^goods/(?P<product_category>\w+)/(?P<good_id>\d+)/$', views.item),
-    re_path(r'goods/(?P<product_category>\w+)/$', views.product_category),
+    re_path(r'^goods/(?P<product_category>\w+)/$', views.product_category),
     path('admin/', admin.site.urls),
     path('', include('goods.urls')),
 ]
