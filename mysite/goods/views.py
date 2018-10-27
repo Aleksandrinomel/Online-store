@@ -14,5 +14,7 @@ def item(request, product_category, good_id):
     photo_links = Goods.objects.get(avito_ad_number=good_id).photo_link
     photo_links = photo_links.split(',')
     rec_list = get_recomendation(good_id)
-    return render(request, 'goods/item.html', {'good': good, 'photo_links': photo_links, 'rec_list': rec_list})
+    rec_goods = Goods.objects.filter(avito_ad_number__in=rec_list)
+    return render(request, 'goods/item.html', {'good': good, 'photo_links': photo_links, 'rec_list': rec_list, 
+    	                                       'rec_goods': rec_goods})
 

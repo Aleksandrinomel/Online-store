@@ -34,7 +34,12 @@
       <div class ="rec-blok">
           {{ rec_list.0}}
           {{ rec_list.1}}
-      </div> 
+      </div>
+      {% for rec_good in rec_goods %}
+      <div>
+          {{ rec_good.name }}
+      </div>
+      {% endfor %} 
     
 
     <!-- Optional JavaScript -->
