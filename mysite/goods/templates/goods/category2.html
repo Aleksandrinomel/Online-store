@@ -62,13 +62,13 @@ rel="stylesheet" type="text/css" />
                 <div class="item col-xs-4 col-lg-4">
                     <div class="thumbnail card">
                         <div class="img-event">
-                            <a href="http://127.0.0.1:8000/goods/videokarty/{{ good.avito_ad_number }}">
+                            <a href="{% url 'product_card' product_category=product_category good_id=good.avito_ad_number %}">
                                 <img class="group list-group-image img-fluid" src={{ good.photo_link|make_list_2 }} alt="" />
                             </a>
                         </div>
                         <div class="caption card-body">
                             <h5 class="group card-title inner list-group-item-heading">
-                                <a href="http://127.0.0.1:8000/goods/videokarty/{{ good.avito_ad_number }}"> {{ good.name }}</a></h5>
+                                <a href="{% url 'product_card' product_category=product_category good_id=good.avito_ad_number %}"> {{ good.name }}</a></h5>
                             <p class="group inner list-group-item-text">
                                 {{ good.adress }} <br> Размещено {{ good.publication_date }} в {{ good.publication_time }}</p>
                             <div class="row2">

@@ -19,7 +19,7 @@ from django.urls import include, path, re_path
 from goods import views
 
 urlpatterns = [
-    re_path(r'^goods/(?P<product_category>\w+)/(?P<good_id>\d+)/$', views.item),
+    re_path(r'^goods/(?P<product_category>\w+)/(?P<good_id>\d+)/$', views.item, name='product_card'),
     re_path(r'^goods/(?P<product_category>\w+)/$', views.product_category),
     path('admin/', admin.site.urls),
     path('', include('goods.urls')),

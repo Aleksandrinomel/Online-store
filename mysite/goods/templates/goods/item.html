@@ -1,4 +1,5 @@
 {% load static %}
+{% load goods_filters %}
 
 <!doctype html>
 <html lang="en">
@@ -31,16 +32,39 @@
               <p>{{ good.adress }}</p>
           </div>
       </div> 
-      <div class ="rec-blok">
-          {{ rec_list.0}}
-          {{ rec_list.1}}
-      </div>
-      {% for rec_good in rec_goods %}
+            {% for rec_good in rec_goods %}
       <div>
           {{ rec_good.name }}
+          {{ rec_good.id}}
+
       </div>
       {% endfor %} 
-    
+    {% for good in rec_goods %}
+                <div class="item col-xs-4 col-lg-4">
+                    <div class="thumbnail card">
+                        <div class="img-event">
+                            <a href="{% url 'product_card' product_category=product_category good_id=good.avito_ad_number %}">
+                                <img class="group list-group-image img-fluid" src={{ good.photo_link|make_list_2 }} alt="" />
+                            </a>
+                        </div>
+                        <div class="caption card-body">
+                            <h5 class="group card-title inner list-group-item-heading">
+                                <a href="{% url 'product_card' product_category=product_category good_id=good.avito_ad_number %}"> {{ good.name }}</a></h5>
+                            <p class="group inner list-group-item-text">
+                                {{ good.adress }} <br> Размещено {{ good.publication_date }} в {{ good.publication_time }}</p>
+                            <div class="row2">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        <span class="price">{{ good.price }} &#8399;</span>
+                                        
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               {% endfor %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
