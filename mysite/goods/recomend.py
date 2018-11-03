@@ -8,6 +8,7 @@ from goods.models import Goods
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+from goods.models import Recomend
 
 
 
@@ -49,10 +50,14 @@ def get_recomendation(avito_id):
     all_cosine_number_sorted = sorted(all_cosine,key=lambda all_cosine: all_cosine[1])
 
     five_cosine_number_sorted = all_cosine_number_sorted[-6:-1]
-    nearest_avito_ad_number = []
+    nearest_avito_ad_numbers = []
     for i in five_cosine_number_sorted:
-        [nearest_avito_ad_number.append(value.avito_ad_number) for num, value in enumerate(all_goods) if num == i[0]]
+        [nearest_avito_ad_numbers.append(value.avito_ad_number) for num, value in enumerate(all_goods) if num == i[0]]
 
-    
-    return nearest_avito_ad_number
+    recomend = Recomend(avito_ad_number=avito_id, five_nearest=nearest_avito_ad_numbers)
+    recomend.save()
+    return nearest_avito_ad_numbers
+
+
+get_recomendation(483225)
 

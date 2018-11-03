@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Goods
-from recomend import get_recomendation
+from .recomend import get_recomendation
 
 
 def product_category(request, product_category):
