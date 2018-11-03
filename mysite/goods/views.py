@@ -6,7 +6,7 @@ from .recomend import get_recomendation
 
 def product_category(request, product_category):
     goods = Goods.objects.filter(category=product_category)
-    return render(request, 'goods/category.html', {'goods': goods})
+    return render(request, 'goods/category2.html', {'goods': goods})
 
 
 def item(request, product_category, good_id):

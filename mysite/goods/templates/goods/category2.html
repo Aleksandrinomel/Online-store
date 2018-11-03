@@ -1,0 +1,96 @@
+{% load static %}
+{% load goods_filters %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="{% static 'css/category2.css' %}">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+rel="stylesheet" type="text/css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar-section">
+
+		<div class="sidebar-categories-wrapper">
+			<div class="sidebar-title">
+				<h5>Компьютерные комплектующие</h5>
+			</div>
+			<ul data-init="sidebarSeeMore" data-init-param="{&quot;itemsShown&quot;: 8}" class="unstyled sidebar-categories-list closed">
+				
+					<li class="sidebar-category">
+						<a href="">Материнские платы</a>	</li>	
+					<li class="sidebar-category">
+						<a href="">Процессоры</a>	</li>	
+					<li class="sidebar-category">
+						<a href="">Видеокарты</a>	</li>	
+					<li class="sidebar-category">
+						<a href="">Жёсткие диски (HDD и SSD)</a>	</li>	
+					<li class="sidebar-category">
+						<a href="">Оперативная память</a>	</li>	
+					<li class="sidebar-category">
+						<a href="">Блоки питания</a>	</li>	
+					<li class="sidebar-category">
+						<a href="">Корпуса</a>	</li>	
+					<li class="sidebar-category">
+						<a href="">Сетевые карты</a>	</li>
+            </ul>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-12 my-3">
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button class="btn btn-info" id="list">
+                        Список
+                    </button>
+                    <button class="btn btn-danger" id="grid">
+                        Плитка
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div id="products" class="row view-group">
+        
+        {% for good in goods %}
+                <div class="item col-xs-4 col-lg-4">
+                    <div class="thumbnail card">
+                        <div class="img-event">
+                            <a href="http://127.0.0.1:8000/goods/videokarty/{{ good.avito_ad_number }}">
+                                <img class="group list-group-image img-fluid" src={{ good.photo_link|make_list_2 }} alt="" />
+                            </a>
+                        </div>
+                        <div class="caption card-body">
+                            <h5 class="group card-title inner list-group-item-heading">
+                                <a href="http://127.0.0.1:8000/goods/videokarty/{{ good.avito_ad_number }}"> {{ good.name }}</a></h5>
+                            <p class="group inner list-group-item-text">
+                                {{ good.adress }} <br> Размещено {{ good.publication_date }} в {{ good.publication_time }}</p>
+                            <div class="row2">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        <span class="price">{{ good.price }} &#8399;</span>
+                                        
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+</div>
+<script>
+    $(document).ready(function() {
+            $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+            $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
+        });
+</script>
+</body>
+</html>

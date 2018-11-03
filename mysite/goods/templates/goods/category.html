@@ -1,44 +1,176 @@
 {% load static %}
 {% load goods_filters %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bootstrap&#1058&#1077&#1084&#1072 | Snippet Bootstrap / Blocks / Blocks Grid and List - Demo</title>
+<link href="https://www.google.com/+BootstraptemaRus" rel="publisher" />
+<link href="http://bootstraptema.ru/assets/css/demo-template.css" rel="stylesheet" />
+<link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+<script type="text/javascript" src="http://bootstraptema.ru/assets/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="http://bootstraptema.ru/assets/js/demo-template.js"></script>
+<style>
+#preloaderBlock,table {
+display:block
+}
+</style>
+</head>
+<body>
+<div id="preloaderBlock">
+<div id="preloader"></div>
+<div class="preloaderSection sectionLeft"></div>
+<div class="preloaderSection sectionRight"></div>
+</div>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+<!--Blocks Grid and List-->
+<style>
+.glyphicon { margin-right:5px; }
+.thumbnail {
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px
+}
 
-      <title>Market</title>
-  <body>
-      
-          <div class="item-line">
-              {% for good in goods %}
-              <div class="item">
-                  <div class="img-container">
-                      <img class="img" src={{ good.photo_link|make_list_2 }} width="208" height="156" alt="Видеокарта MSI GTX 1060 3gb">
-                  </div>
-                  <div class="description">
-                      <h6>{{ good.name }}</h6>
-                      <br>
-                    {{ good.avito_ad_number }}
-                      <br>
-                      <span>{{ good.price }}</span>
-                      <br>
-                    {{ good.adress}}
-                      <br>
-                    {{ good.publication_date }} {{ good.publication_time }}
-                  </div>
-              </div>
-              {% endfor %}
-          </div>
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+.item.list-group-item {
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover {
+    background: rgb(105,65,152)
+}
+.item.list-group-item .list-group-image {
+    margin-right: 10px
+}
+.item.list-group-item .thumbnail {
+    margin-bottom: 0px
+}
+.item.list-group-item .caption {
+    padding: 9px 9px 0px 9px
+}
+.item.list-group-item:nth-of-type(odd) {
+    background: #eeeeee
+}
+.item.list-group-item:before, .item.list-group-item:after {
+    display: table;
+    content: " "
+}
+.item.list-group-item img {
+    float: left
+}
+.item.list-group-item:after {
+    clear: both
+}
+.list-group-item-text {
+    margin: 0 0 11px
+}
+</style>
+
+<div class="container">
+    <div class="well well-sm">
+        <strong>Вид: </strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm">
+<span class="glyphicon glyphicon-th-list"></span>Список</a> 
+<a href="#" id="grid" class="btn btn-default btn-sm">
+<span class="glyphicon glyphicon-th"></span>Сетка</a>
+        </div>
+    </div>
+    <div id="products" class="row list-group">
+        {% for good in goods %}
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="http://bootstraptema.ru/images/type/400x250.png" alt="1" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">{{ good.name }}</h4>
+                    <p class="group inner list-group-item-text">
+Описание товара 1,  Описание товара 1, Описание товара 1, Описание товара 1, Описание товара 1, Описание товара 1, Описание товара 1, Описание товара 1, Описание товара 1.
+</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">{{ good.price }}</p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="#">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+<script>
+$(document).ready(function() {
+$('#list').click(function(event){event.preventDefault();
+$('#products .item').addClass('list-group-item');});
+$('#grid').click(function(event){event.preventDefault();
+$('#products .item').removeClass('list-group-item');
+$('#products .item').addClass('grid-group-item');});
+});
+</script>
+<!--./Blocks Grid and List-->
+
+<table id="close">
+<tr>
+<td>
+<button type="button" onclick="Close()">&#10006</button>
+</td>
+</tr>
+<tr>
+<td>
+<iframe src="http://bootstraptema.ru/assets/ads/templates/bootstrap-theme.html" frameborder="0"></iframe>
+</td>
+</tr>
+</table>
+<script>
+function Close()
+{
+document.getElementById("close").style.display="none";
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33874070-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter33470293 = new Ya.Metrika({
+                    id:33470293,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/33470293" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
 </html>
