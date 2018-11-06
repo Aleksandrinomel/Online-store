@@ -13,9 +13,47 @@ rel="stylesheet" type="text/css" />
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-<div class="top-box"></div>
+<div class="top-box">
+    <div class="top-box-content">
+        <div class="geo-city">
+            <img src="{% static 'img/icons/placeholder-filled-point.png' %}" alt="">
+            Moй Регион: Москва
+        </div>
+        <div class="log-or-reg">
+            Вход 
+            <img src="{% static 'img/icons/businessman.png' %}" alt="">
+            Регистрация
+        </div>
+    </div>
+</div>
 
 <div class="container">
+    <div class="cart-mail-phone">
+        <div class="phone">
+            <img src="{% static 'img/icons/smartphone-call.png' %}" alt="">
+            8 800 555-35-35
+        </div>
+        
+        <div class="cart">
+            <img src="{% static 'img/icons/shopping-cart.png' %}" alt="">
+            Корзина
+        </div>
+        <div class="mail">
+            <img src="{% static 'img/icons/email-filled-closed-envelope.png' %}" alt="">
+            support@qwertyshop.ru
+        </div>
+    </div>
+    <div class="logo-search">
+        <div class="logo">
+            <img class="logo-img" src="{% static 'img/logo/qwerty-logo.png' %}" alt="">
+        </div>
+        <div class="search">
+            <form class="form-inline ">
+               <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Поиск" aria-label="Search">
+               <input type="image" src="{% static 'img/icons/magnifier.png' %}">
+            </form>
+        </div>
+    </div>
     <div class="sidebar-section">
 
 		<div class="sidebar-categories-wrapper">

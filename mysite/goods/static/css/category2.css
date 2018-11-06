@@ -14,6 +14,61 @@
     height: 29px;
 }
 
+.top-box-content{
+    max-width: 1110px;
+    min-width: 690px;
+    margin: 0 auto;
+}
+
+.geo-city{
+    height: 29px;
+    float: left;
+}
+
+.log-or-reg {
+    float: right;
+}
+
+.cart-mail-phone{
+    height: 60px;
+    padding-top: 25px;
+
+}
+
+.phone{
+    float: left;
+}
+
+.mail{
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+
+.cart{
+    float: right;
+}
+
+.logo-search{
+    height: 120px;
+}
+
+.logo{
+    height: 120px;
+    float: left;
+    width: 400px;
+    padding-top: 20px;
+}
+
+.logo-img{
+    height: 65px;
+    width: 350px;
+}
+
+.search{
+    float: right;
+    padding-top: 40px;
+}
 .view-group {
     display: -ms-flexbox;
     display: flex;
@@ -46,18 +101,20 @@
 .item.list-group-item .img-event {
     float: left;
     width: 30%;
+    height: 160px
 }
 
 .item.list-group-item .list-group-image
 {
     width: 600px;
-    height: 200px;
+    height: 158px;
     margin-right: 10px;
 }
 .item.list-group-item .thumbnail
 {
     margin-bottom: 0px;
     display: inline-block;
+    height: 160px;
 }
 .item.list-group-item .caption
 {
@@ -70,7 +127,7 @@
 .img-fluid {
     width: 348px;
     height: 190px;
-    border: 1px solid rgba(0,0,0,.125);
+    border-right: 1px solid rgba(0,0,0,.125);
 }
 
 .item.list-group-item:before, .item.list-group-item:after
