@@ -13,9 +13,8 @@ class Goods(models.Model):
     text = models.TextField(null=True)
     category = models.TextField(null=True)
     deletion_date = models.DateField(null=True)
+    recommendation_list = models.TextField(null=True)
 
 
-class Recomend(models.Model):
-    avito_ad_number = models.IntegerField(null=True)
-    five_nearest = models.TextField(null=True)
+
 
