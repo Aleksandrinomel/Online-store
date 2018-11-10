@@ -20,11 +20,11 @@ def list_of_id_bd_creator():
     return list_of_id_bd
     print(list_of_id_bd)
 
-category ='https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/videokarty'
-pr_list = ['https://178.47.131.21:3128', 'https://195.208.172.70:8080', 'https://46.228.2.178:3128', 'https://178.128.26.169:8080', 'https://119.81.71.27:80', 'https://118.174.211.219:81', 'https://35.199.96.12:80', 'https://43.231.184.32:1080', 'https://74.208.83.188:80', 'https://149.202.87.93:9999', 'https://88.204.154.155:8080', 'https://180.210.206.52:3128', 'https://80.211.95.112:3128', 'https://180.210.205.107:3128', 'https://76.69.192.176:3128', 'https://103.240.161.109:6666', 'https://185.31.159.62:3128', 'https://180.210.201.54:3128', 'https://163.172.182.164:3128', 'https://88.204.154.155:80', 'https://178.62.193.217:3128', 'https://181.10.230.90:3128', 'https://94.177.173.225:3128', 'https://180.210.205.104:3128', 'https://178.128.96.106:3128', 'https://173.212.204.122:3128', 'https://192.99.226.30:3128', 'https://5.9.58.22:3128', 'https://51.38.234.95:8080', 'https://159.8.114.37:25', 'https://51.140.202.119:8080', 'https://23.253.54.249:3128', 'https://35.196.254.123:3128', 'https://67.209.67.231:5555', 'https://51.38.71.101:8080', 'https://202.139.192.16:3128', 'https://180.210.205.110:3129', 'https://119.81.71.27:8123', 'https://37.61.224.240:8195', 'https://159.8.114.37:8123', 'https://192.99.226.30:80', 'https://173.192.128.238:8123', 'https://158.69.206.181:8888', 'https://131.161.42.6:8090', 'https://71.6.46.151:443', 'https://173.192.21.89:80', 'https://212.112.97.27:3128', 'https://202.63.243.236:8888', 'https://52.206.108.231:3128', 'https://64.214.77.66:8080', 'https://173.192.21.89:8123', 'https://119.81.189.194:25', 'https://62.129.12.74:8888', 'https://159.8.114.37:80', 'https://138.118.173.123:8080', 'https://202.29.238.161:3128', 'https://202.139.192.16:8080', 'https://69.51.6.201:8080', 'https://118.174.211.219:8080', 'https://14.36.4.200:3128', 'https://190.254.192.131:3128', 'https://104.152.179.76:808', 'https://35.185.201.225:8080', 'https://125.25.202.21:3128']
+category ='https://www.avito.ru/moskva/tovary_dlya_kompyutera/komplektuyuschie/materinskie_platy'
+pr_list = ['https://23.92.26.210:8000', 'https://156.237.192.227:1080', 'https://203.109.86.185:8888', 'https://45.32.195.95:8124', 'https://45.32.195.95:8111', 'https://91.235.42.20:3130', 'https://159.8.114.37:80', 'https://181.41.215.96:1080', 'https://178.128.21.245:3128', 'https://74.208.83.188:80', 'https://24.30.70.57:8080', 'https://45.32.195.95:8118', 'https://94.124.1.66:8080', 'https://35.240.29.142:3128', 'https://51.68.177.232:1080', 'https://178.128.19.104:3128', 'https://54.39.138.148:3128', 'https://173.192.21.89:25', 'https://35.185.201.225:8080', 'https://149.56.69.5:1080', 'https://178.128.21.245:8080', 'https://180.210.201.57:3130', 'https://67.209.67.231:5555', 'https://173.192.21.89:80', 'https://188.40.166.196:3128', 'https://178.128.101.234:8080', 'https://45.32.195.95:8123', 'https://51.38.234.95:8080', 'https://200.70.46.238:3128', 'https://51.75.109.89:3128', 'https://198.50.142.47:3128', 'https://142.44.242.57:3128', 'https://80.106.195.144:3128', 'https://51.75.109.85:3128', 'https://161.202.226.194:8123', 'https://66.70.167.123:3128', 'https://104.237.138.105:8118', 'https://41.76.245.106:8888', 'https://125.99.34.93:8080', 'https://200.21.90.246:8080', 'https://178.128.31.194:8080', 'https://196.0.109.146:8888', 'https://163.172.182.164:3128', 'https://163.172.134.194:3128', 'https://202.181.232.229:1080', 'https://201.20.99.10:3130', 'https://51.15.169.6:8118', 'https://188.165.132.181:3128', 'https://200.178.236.210:3128', 'https://47.89.37.177:3128', 'https://41.208.20.50:8888', 'https://90.84.240.81:3128', 'https://185.38.216.122:8888', 'https://200.152.78.48:8888', 'https://185.85.162.32:83', 'https://41.160.246.212:3128', 'https://88.204.154.155:3128', 'https://181.47.169.81:8888', 'https://95.78.157.140:8888', 'https://212.237.30.203:8888', 'https://51.75.25.8:3133', 'https://95.216.15.79:3128', 'https://51.75.109.94:3128', 'https://178.128.101.158:80']
 proxies = {
 
-        'https': 'https://195.208.172.70:8080'
+        'https': 'https://185.38.216.122:8888'
     }
 # Определяет кол-во страниц, на которых расположены нужные объявления
 def create_total_pages():
@@ -56,8 +56,10 @@ def list_of_id_avito_creator(total_pages, category):
             list_of_id_avito.append(i.get('data-item-id'))
         time.sleep(1)
         print(list_of_id_avito)
+        break
     print(list_of_id_avito)
     return list_of_id_avito
+
 
 def deletion_date_creator(list_of_id_bd, list_of_id_avito):
     for id_bd in list_of_id_bd:
@@ -79,7 +81,6 @@ def new_goods_creator(list_of_id_avito, list_of_id_bd, pr_list):
         if id_avito not in list_of_id_bd:
             item_link = 'https://www.avito.ru/moskva/tovary_dlya_kompyutera/' + '_' + id_avito
             for i in range(len(pr_list)):
-
                 try:
                     item_html = requests.get(item_link, proxies=proxies)
                     item_text = BeautifulSoup(item_html.text, "html.parser")
@@ -125,7 +126,7 @@ def new_goods_creator(list_of_id_avito, list_of_id_bd, pr_list):
                                  publication_date=info_dict['avito_date_publication'],
                                  publication_time=info_dict['avito_time_publication'], text=info_dict['ad_text'],
                                  photo_link=info_dict['photo_link'], adress=info_dict['adress'], price=info_dict['price'],
-                                 category='videokarty')
+                                 category='materinskie_platy')
                     good.save()
 
                     #                x += 1

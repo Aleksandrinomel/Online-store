@@ -1,5 +1,5 @@
 proxies = list()
-with open('proxy.txt') as pr:
+with open('pro.txt') as pr:
     for i in pr:
         if i.count('.') == 3:
             x = i.split()
